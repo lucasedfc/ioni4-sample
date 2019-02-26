@@ -1,0 +1,60 @@
+<app-header title="DateTime"></app-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Birth data</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime
+        placeholder="birtdate"
+        display-format="YYYY MMMM DD"
+        cancelText="Dismiss"
+        [ngModel]="birthDate.toISOString()"
+        (ionChange)="changeBirthDate($event)"
+      >
+      </ion-datetime>
+    </ion-item>
+
+    <ion-list-header>
+      <ion-label>Restrictions</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>
+        Min & Max
+      </ion-label>
+      <ion-datetime
+        placeholder="yyyy-mm-dd"
+        display-format="YYYY MMMM DD"
+        min="2015-01-01"
+        max="2015-12-31"
+      ></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        Years
+      </ion-label>
+      <ion-datetime
+        placeholder="YYYY"
+        display-format="YYYY"
+        min="2015"
+        max="2025"
+        value="2020"
+      ></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        Custom Years
+      </ion-label>
+      <ion-datetime
+        [pickerOptions]="customPickerOptions"
+        [(ngModel)]="customDate"
+      ></ion-datetime>
+    </ion-item>
+  </ion-list>
+</ion-content>
