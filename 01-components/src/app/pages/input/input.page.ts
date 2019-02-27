@@ -21,7 +21,7 @@ export class InputPage implements OnInit {
   }
 
   onSubmitTemplate(){
-    console.log("Form submited");
+    console.log("Form submitted");
     console.log("User data", this.user);
   }
 
